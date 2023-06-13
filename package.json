@@ -1,0 +1,16 @@
+{
+  "name": "typescript-intro",
+  "version": "1.0.0",
+  "description": "Introduction to typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "exec": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Walid Newaz",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.3"
+  }
+}
