@@ -17,3 +17,9 @@ To run the compiled source:
 ```shell
 npm run exec
 ```
+
+Run tests with coverage report:
+
+```shell
+npm run test
+```
