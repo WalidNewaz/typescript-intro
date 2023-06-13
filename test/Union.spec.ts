@@ -14,4 +14,17 @@ describe('Union', () => {
             expect(result).to.equal("The value is hello");
         });
     });
+
+    describe('greetings', () => {
+        it('should return Hello World', () => {
+            var union = new Union();
+            const result = union.greetings("World");
+            expect(result).to.equal("Hello World");
+        });
+        it('should return Hello Walid, Michele, Rachel', () => {
+            var union = new Union();
+            const result = union.greetings(["Walid", "Michele", "Rachel"]);
+            expect(result).to.equal("Hello Walid, Michele, Rachel");
+        });
+    });
 });
