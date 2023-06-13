@@ -7,7 +7,7 @@ import { RequestProcessor } from '../../src/enum/RequestProcessor';
 describe('RequestProcessor', () => {
     const logSpy: SinonSpy = sinon.spy(console, 'log');
     let request: Request;
-
+    
     it('should log a message for a draft request', () => {
         request = new Request(1, ApprovalStatus.draft, 'Draft request');
         RequestProcessor.process(request);
@@ -36,6 +36,18 @@ describe('RequestProcessor', () => {
         request = new Request(5, ApprovalStatus.pending, 'Pending request');
         RequestProcessor.process(request);
         expect(logSpy.calledWith('Request 5 is pending.')).to.be.true;
+    });
+
+    it('should change the status of a request', () => {
+        request = new Request(6, ApprovalStatus.draft, 'Draft request');
+        RequestProcessor.process(request);
+        expect(logSpy.calledWith('Request 6 is a draft.')).to.be.true;
+        request.updateStatus(ApprovalStatus.submitted);
+        RequestProcessor.process(request);
+        expect(logSpy.calledWith('Request 6 was submitted.')).to.be.true;
+        request.updateStatus(ApprovalStatus.approved);
+        RequestProcessor.process(request);
+        expect(logSpy.calledWith('Request 6 was approved.')).to.be.true;
     });
 });
 

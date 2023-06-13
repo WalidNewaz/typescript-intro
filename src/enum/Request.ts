@@ -1,7 +1,7 @@
 import { ApprovalStatus } from "./ApprovalStatus";
 
 export class Request {
-    id: number;
+    readonly id: number;
     status: ApprovalStatus;
     description: string;
 
@@ -9,5 +9,9 @@ export class Request {
         this.id = id;
         this.status = status;
         this.description = description;
+    }
+
+    updateStatus(status: ApprovalStatus): void {
+        this.status = status;
     }
 }
