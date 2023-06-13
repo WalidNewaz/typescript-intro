@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { ITeacher } from '../src/ITeacher';
+import { ITeacher } from '../src/interfaces/ITeacher';
 
 describe('ITeacher', () => {
     it('should contain the information of a teacher', () => {

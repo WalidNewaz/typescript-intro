@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { IPerson } from '../src/IPerson';
+import { IPerson } from '../src/interfaces/IPerson';
 
 describe('IPerson', () => {
         it('should contain the information of a customer', () => {
