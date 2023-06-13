@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { IRunOptions } from '../src/interfaces/IRunOptions';
+import { IRunOptions } from '../../src/interfaces/IRunOptions';
 
 describe('IRunOptions', () => {
     it('should accept a string as commandLine', () => {
